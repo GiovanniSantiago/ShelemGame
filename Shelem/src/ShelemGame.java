@@ -64,7 +64,7 @@ public class ShelemGame {
 				System.out.println(getPlayerAtPosition(position).getName()+", enter first bid, or PASS");
 				String input = receiveConsoleInput();
 				if(input.equals("PASS")) {
-					
+					bidOver = true; //EMERGENCY QUIT
 				}
 			}
 		}
