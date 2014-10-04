@@ -1,18 +1,18 @@
 
-public class FrenchCards {
+public class FrenchCard {
 	//---------------------------------------------
 	//----------FIELD------------------------------
 	//---------------------------------------------
 	Suit 	suit;
-	Ranks 	rank;
+	Rank 	rank;
 	
 	
 	
-	public FrenchCards(){
+	public FrenchCard(){
 		
 	}
 	
-	public FrenchCards(Suit suit, Ranks rank){
+	public FrenchCard(Suit suit, Rank rank){
 		this.suit = suit;
 		this.rank = rank;
 		setImg();

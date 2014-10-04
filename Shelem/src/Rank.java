@@ -1,5 +1,5 @@
 
-public enum Ranks {
+public enum Rank {
 	A(10),
 	ONE(0),
 	TWO(0),
@@ -18,7 +18,7 @@ public enum Ranks {
 	
 	private int value;
 	
-	private Ranks(int value){
+	private Rank(int value){
 		this.value = value;
 	}
 	
