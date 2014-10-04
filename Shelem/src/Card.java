@@ -29,7 +29,7 @@ public class Card {
 		 * Can crop manually, or programmatically
 		 */
 		//image = ImageRegistry.getImage(suit.toString()+"_"+rank.toString()+".png");
-		image = ImageRegistry.getImage("h.png");
+		image = ImageRegistry.loadImage("h.png");
 	}
 	
 	@Override

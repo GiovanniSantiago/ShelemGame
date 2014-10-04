@@ -19,7 +19,7 @@ public class ImageRegistry {
 	 * @return
 	 * @throws IOException
 	 */
-	public static BufferedImage getImage(String name) {
+	public static BufferedImage loadImage(String name) {
 		Path fullPath = FileSystems.getDefault().getPath(IMAGE_PATH + name);
 		if(images.containsKey(fullPath)) {
 			return images.get(fullPath);
@@ -36,4 +36,6 @@ public class ImageRegistry {
 			return null;
 		}
 	}
+	
+	
 }
