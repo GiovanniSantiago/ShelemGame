@@ -1,4 +1,5 @@
 import java.awt.image.BufferedImage;
+import java.nio.file.FileSystems;
 
 
 public class Card {
@@ -27,8 +28,12 @@ public class Card {
 		/*
 		 * Can crop manually, or programmatically
 		 */
-		image = ImageRegistry.getImage(suit.toString()+"_"+rank.toString()+".png");
+		//image = ImageRegistry.getImage(suit.toString()+"_"+rank.toString()+".png");
+		image = ImageRegistry.getImage("h.png");
 	}
 	
-	
+	@Override
+	public String toString(){
+		return this.rank.toString() + " of " + this.suit.toString();
+	}
 }

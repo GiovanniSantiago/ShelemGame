@@ -19,4 +19,8 @@ public class Player {
 		}
 		return false;
 	}
+	
+	public void dealCard(Card c) {
+		this.handCards.add(c);
+	}
 }
