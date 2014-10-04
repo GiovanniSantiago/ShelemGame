@@ -19,7 +19,7 @@ public class FrenchCards {
 	}
 	
 	private void setImg(){
-		
+		String g = "ASKJDKLSAJDKLSAJDLSKA";
 	}
 	
 	
