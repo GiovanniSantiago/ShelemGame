@@ -35,4 +35,8 @@ public class Player {
 	public PlayerPosition getPosition() {
 		return position;
 	}
+
+	public String getName() {
+		return name;
+	}
 }

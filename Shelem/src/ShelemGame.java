@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -8,6 +9,7 @@ public class ShelemGame {
 	
 	ArrayList<Card> deck = new ArrayList<Card>(52);
 	Player[] players = new Player[4];
+	Team declaringTeam, defendingTeam;
 	Suit currentRule;
 	int bid = 100;
 	
@@ -49,14 +51,39 @@ public class ShelemGame {
 			widow.addAll(undealtCards);
 		}
 		
+		/*
+		 * Get bids
+		 */
+		{
+			ArrayList<Player> biddingPlayers = new ArrayList<Player>();
+			
+			PlayerPosition position = PlayerPosition.NORTH;
+			int currentBid = 100;
+			boolean bidOver = false;
+			while(!bidOver) {
+				System.out.println(getPlayerAtPosition(position).getName()+", enter first bid, or PASS");
+				String input = receiveConsoleInput();
+				if(input.equals("PASS")) {
+					
+				}
+			}
+		}
 		
-		
+		printStatus();
+	}
+	
+	private Player getPlayerAtPosition(PlayerPosition p) {
+		for(Player player : players) {
+			if(player.getPosition()==p)
+				return player;
+		}
+		return null;
 	}
 	
 	private void printStatus() {
 		ArrayList<Card> widow = new ArrayList<Card>(deck);
 		for(Player p : players) {
-			System.out.println("Player: "+p.getPosition());
+			System.out.println("Player: "+p.getName()+" : "+p.getPosition());
 			for(int i = 0; i < p.getCardCount(); i++) {
 				System.out.println("\t"+p.getCard(i).toString());
 				widow.remove(p.getCard(i));

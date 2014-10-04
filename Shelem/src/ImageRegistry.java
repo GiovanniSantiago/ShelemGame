@@ -21,13 +21,13 @@ public class ImageRegistry {
 	 */
 	public static BufferedImage loadImage(String name) {
 		Path fullPath = FileSystems.getDefault().getPath(IMAGE_PATH + name);
-		if(images.containsKey(fullPath)) {
-			return images.get(fullPath);
+		if(images.containsKey(name)) {
+			return images.get(name);
 		} else {
 			BufferedImage b;
 			try {
 				b = ImageIO.read(new File(fullPath.toString()));
-				images.put(fullPath.toString(),b);
+				images.put(name,b);
 				return b;
 			} catch (IOException e) {
 				e.printStackTrace();
