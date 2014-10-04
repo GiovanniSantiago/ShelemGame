@@ -24,6 +24,9 @@ public class Card {
 	}
 	
 	private void setImg(){
+		/*
+		 * Can crop manually, or programmatically
+		 */
 		image = ImageRegistry.getImage(suit.toString()+"_"+rank.toString()+".png");
 	}
 	
