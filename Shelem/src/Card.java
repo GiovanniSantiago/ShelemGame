@@ -1,7 +1,7 @@
 import java.awt.image.BufferedImage;
 
 
-public class FrenchCard {
+public class Card {
 	//---------------------------------------------
 	//----------FIELD------------------------------
 	//---------------------------------------------
@@ -17,7 +17,7 @@ public class FrenchCard {
 	}
 	*/
 	
-	public FrenchCard(Suit suit, Rank rank){
+	public Card(Suit suit, Rank rank){
 		this.suit = suit;
 		this.rank = rank;
 		setImg();
