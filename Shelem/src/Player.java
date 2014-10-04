@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 
 public class Player {
+	
 	private ArrayList<Card> handCards;
 	private String name;
 	private PlayerPosition position;
