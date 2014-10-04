@@ -48,9 +48,25 @@ public class ShelemGame {
 			}
 			widow.addAll(undealtCards);
 		}
-		for(Card c : widow) {
-			System.out.println(c.toString());
+		
+		
+		
+	}
+	
+	private void printStatus() {
+		ArrayList<Card> widow = new ArrayList<Card>(deck);
+		for(Player p : players) {
+			System.out.println("Player: "+p.getPosition());
+			for(int i = 0; i < p.getCardCount(); i++) {
+				System.out.println("\t"+p.getCard(i).toString());
+				widow.remove(p.getCard(i));
+			}
 		}
+		System.out.println("Widow: ");
+		for(Card c : widow) {
+			System.out.println("\t"+c.toString());
+		}
+		
 	}
 	
 	private String receiveConsoleInput() {
