@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 
 public class Player {
-	ArrayList<FrenchCard> handCards;
-	String name;
-	PlayerPosition position;
+	private ArrayList<FrenchCard> handCards;
+	private String name;
+	private PlayerPosition position;
 	
 	public Player(PlayerPosition position, String name) {
 		this.position = position;
