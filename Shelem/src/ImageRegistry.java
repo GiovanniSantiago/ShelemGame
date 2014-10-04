@@ -17,14 +17,21 @@ public class ImageRegistry {
 	 * @return
 	 * @throws IOException
 	 */
-	public BufferedImage getImage(String name) throws IOException {
+	public static BufferedImage getImage(String name) {
 		String fullPath = IMAGE_PATH + name;
 		if(images.containsKey(fullPath)) {
 			return images.get(fullPath);
 		} else {
-			BufferedImage b = ImageIO.read(new File(fullPath));
-			images.put(fullPath,b);
-			return b;
+			BufferedImage b;
+			try {
+				b = ImageIO.read(new File(fullPath));
+				images.put(fullPath,b);
+				return b;
+			} catch (IOException e) {
+				e.printStackTrace();
+				System.out.println("Cannot load image: "+fullPath);
+			}
+			return null;
 		}
 	}
 }

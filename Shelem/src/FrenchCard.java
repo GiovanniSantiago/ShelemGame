@@ -1,3 +1,5 @@
+import java.awt.image.BufferedImage;
+
 
 public class FrenchCard {
 	//---------------------------------------------
@@ -6,11 +8,14 @@ public class FrenchCard {
 	Suit 	suit;
 	Rank 	rank;
 	
+	BufferedImage image;
 	
 	
+	/*
 	public FrenchCard(){
 		
 	}
+	*/
 	
 	public FrenchCard(Suit suit, Rank rank){
 		this.suit = suit;
@@ -19,11 +24,8 @@ public class FrenchCard {
 	}
 	
 	private void setImg(){
-		String g = "ASKJDKLSAJDKLSAJDLSKA";
+		image = ImageRegistry.getImage(suit.toString()+"_"+rank.toString()+".png");
 	}
-	
-	
-	
 	
 	
 }
