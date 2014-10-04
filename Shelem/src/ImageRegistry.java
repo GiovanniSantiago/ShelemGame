@@ -7,25 +7,22 @@ import javax.imageio.ImageIO;
 
 
 public class ImageRegistry {
-	private static HashMap<String, BufferedImage> images = new HashMap<String, BufferedImage>();
+	public static HashMap<String, BufferedImage> images = new HashMap<String, BufferedImage>();
+	
 	
 	public static final String IMAGE_PATH = "res/";
 	
-	/**
-	 * Read an image from 'res/' folder
-	 * @param name
-	 * @return
-	 * @throws IOException
-	 */
-	public static BufferedImage getImage(String name) {
+
+
+	public static BufferedImage loadImage(String name) {
 		String fullPath = IMAGE_PATH + name;
-		if(images.containsKey(fullPath)) {
-			return images.get(fullPath);
+		if(images.containsKey(name)) {
+			return images.get(name);
 		} else {
 			BufferedImage b;
 			try {
 				b = ImageIO.read(new File(fullPath));
-				images.put(fullPath,b);
+				images.put(name,b);
 				return b;
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -34,4 +31,21 @@ public class ImageRegistry {
 			return null;
 		}
 	}
+	
+	public static BufferedImage getImage(String name){
+		return images.get(name);
+	}
+	
+	public static void setImageGrid(BufferedImage img, int width, int height){
+		BufferedImage	buffImg;
+		double 			gridImgWidth 	= img.getWidth() / width;
+		double			gridImgHeight	= img.getHeight() / height;
+		
+		for(Suit s: Suit.values()){
+			images.put(s.toString(), img.getSubimage(0, 0, width, height));
+		}
+		
+	}
+	
+
 }
