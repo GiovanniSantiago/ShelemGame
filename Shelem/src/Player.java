@@ -19,4 +19,20 @@ public class Player {
 		}
 		return false;
 	}
+	
+	public int getCardCount() {
+		return handCards.size();
+	}
+	
+	public Card getCard(int i) {
+		return handCards.get(i);
+	}
+	
+	public void dealCard(Card c) {
+		this.handCards.add(c);
+	}
+
+	public PlayerPosition getPosition() {
+		return position;
+	}
 }

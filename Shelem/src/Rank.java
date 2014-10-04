@@ -1,7 +1,6 @@
 
 public enum Rank {
 	A(10),
-	ONE(0),
 	TWO(0),
 	THREE(0),
 	FOUR(0),
