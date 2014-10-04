@@ -34,6 +34,11 @@ public class ImageRegistry {
 		}
 	}
 	
+	/*
+	 * testcomment
+	 * 
+	 */
+	
 	public static BufferedImage getImage(String name){
 		return images.get(name);
 	}
